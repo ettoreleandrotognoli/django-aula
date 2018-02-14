@@ -1,0 +1,17 @@
+{% extends 'base/web.html' %}
+
+{% block body %}
+    Hello, {{name|default:"leo"}}
+
+    <ul>
+    {% for l in name|de %}
+        <li>{{l}}</li>
+    {% endfor %}
+    </ul>
+
+    <pre>{{request.POST}}</pre>
+    <br/>
+    <pre>{{request.GET}}</pre>
+    <br/>
+    <pre>{{request.META}}</pre>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base/web.html' %}
+{% block body %}
+<a href="{% url 'movement-create' %}">novo movimento</a>
+<table class="table table-striped table-hover">
+<tbody>
+{% for object in object_list %}
+<tr>
+    <td>
+        <a href="{% url 'movement-update' pk=object.pk %}">
+            {{object.pk}}
+        </a>
+    </td>
+    <td>{{object.value}}</td>
+    <td>{{object.remark}}</td>
+</tr>
+{% endfor %}
+</table>
+</tbody>
+{% endblock %}
